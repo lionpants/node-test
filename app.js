@@ -8,25 +8,7 @@ var running = 0;
 var output = '';
 
 var sql = 'SELECT TOP 10 mlsarea, mlsnumber, price, CreateDate, SquareFeet, PropertyType, City, State, Zip, County, TotalBedrooms, TotalBaths, Age, AgentName, AgentPhone FROM MLSMASTER.dbo.AutoListings WHERE age IS NOT NULL';
-var request = new Connect.Request(sql, function (err, rowCount) {
-	if (err) {
-		console.log(err);
-	}
-	else {
-		console.log(output);
-	}
-});
-
-request.on('columnMetadata', function (columns) {
-
-});
-
-request.on('row', function (columns) {
-	console.log(columns);
-	//output += JSON.stringify(columns);
-});
-
-Connect.ExecSql(request);
+Connect.executeQuery(sql);
 
 
 // var res = {
