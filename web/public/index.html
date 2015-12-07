@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="TestWeb">
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+
+<body ng-controller="TestBodyCtrl">
+	<div>
+		<input type="text" ng-model="query" placeholder="Search for a listng here">
+		<hr>
+		<div ng-repeat="listing in listings">
+			
+		</div>
+	</div>
+
+	<script src="app.js"></script>
+	<script src="index.js"></script>
+</body>
+
+</html>
