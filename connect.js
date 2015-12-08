@@ -12,12 +12,11 @@ var config = {
     }
 };
 
-exports.executeQuery = function (query) {
+exports.executeQuery = function (query, callback) {
     var connection = new sql.Connection(config, function (err) {
         var request = new sql.Request(connection); // or: var request = connection.request();
         request.query(query, function (err, recordset) {
-            if (err) console.log(err);
-            else console.log(recordset);
+            callback(err, recordset);
         });
     });
 

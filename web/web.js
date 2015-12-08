@@ -15,6 +15,8 @@ app.use(bodyParser.urlencoded({
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
+require('./routes')(app);
+
 // Allow CORS
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");

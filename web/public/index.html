@@ -7,11 +7,24 @@
 
 <body ng-controller="TestBodyCtrl">
 	<div>
-		<input type="text" ng-model="query" placeholder="Search for a listng here">
+		<input type="text" ng-change="search()" ng-model="query" placeholder="Search for a listing here" autofocus>
 		<hr>
-		<div ng-repeat="listing in listings">
-			
-		</div>
+		<table border="1" style="width:100%">
+			<tr>
+				<th>MLSNumber</th>
+				<th>AgentName</th>
+				<th>OfficeName</th>
+				<th>Address</th>
+				<th>Remarks</th>
+			</tr>
+			<tr ng-repeat="listing in listings">
+				<td>{{listing.MLSNumber}}</td>
+				<td>{{listing.AgentName}}</td>
+				<td>{{listing.OfficeName}}</td>
+				<td>{{listing.StreetNumber}} {{listing.StreetName}}, {{listing.City}}</td>
+				<td>{{listing.Remarks}}</td>
+			</tr>
+		</table>
 	</div>
 
 	<script src="app.js"></script>

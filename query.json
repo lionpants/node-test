@@ -1,0 +1,28 @@
+{
+	"query": {
+		"dis_max": {
+			"queries": [
+				{
+					"match": {
+						"Remarks": "highway"
+					}
+				},
+				{
+					"match": {
+						"AgentName": "Taylor Adams"
+					}
+				},
+				{
+					"match": {
+						"City": "Taylor Adams"
+					}
+				},
+				{
+					"match": {
+						"Zoning": "Taylor Adams"
+					}
+				}
+			]
+		}
+	}
+}
